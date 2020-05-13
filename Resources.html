@@ -12,12 +12,16 @@
 		<ul>
 			<li><a href="index.html">Home</a></li>
 			<li><a href="meetings.html">Meeting Information</a></li>
-			<li><a  class="active" href="Resources.html">Resources</a></li>
+			<li><a class="active" href="Resources.html">Resources</a></li>
 			<li style="float:right"><a href="about.html">About</a></li>
 		</ul>
 	</nav>
 	<br/>
-	<div class="objectives">
+	<div class="tab">
+		<button class="tlinks" onclick="openResource(event, 'Routine')" id="defaultOpen">Prayer Routine</button>
+		<button class="tlinks" onclick="openResource(event, 'Web_Links')">Web Links</button>
+	</div>
+	<div id="Routine" class="tabcontent">
 		<h2>Example prayer routine (include all or some daily)</h2>
 		<ul>
 			<li>Angelus (6am,12pm,6pm, <a href="https://remnantnewspaper.com/web/index.php/articles/item/4796-the-angelus-a-militant-christian-prayer" target="_blank">Article</a>) <i>set phone alarm to remind you</i></li>
@@ -32,7 +36,7 @@
 			<li><u>Important to read</u>: OT Ezra 1-10, Nem 1-7, 8-12, 1 & 2 Maccabees (one chapter each night, NOT combined with NT reading)</li>
 		</ul>
 	</div>
-	<div class="objectives">
+	<div id="Web_Links" class="tabcontent">
 		<h2>Websites</h2>
 		<ul>
 			<li><a href="https://www.youtube.com/user/onearmsteve4192/videos" target="_blank">Sensus Fidelium</a></li>
@@ -44,6 +48,25 @@
 			<li><a href="https://meaningofcatholic.com/" target="_blank">Meaning of Catholic</a></li>			
 		</ul
 	</div>
+	<script>
+		function openResource(evt, resourceName) {
+			var i, tabcontent, tlinks;
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tlinks = document.getElementsByClassName("tlinks");
+		for (i = 0; i < tlinks.length; i++) {
+			tlinks[i].className = tlinks[i].className.replace(" active", "");
+		}
+		document.getElementById(resourceName).style.display = "block";
+		evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+		document.getElementById("defaultOpen").click();
+	</script>
+	
 
 
 <!--<p>This is <sup>superscripted</sup> text.</p>

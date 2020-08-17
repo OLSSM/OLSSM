@@ -37,6 +37,14 @@ html,body {
 .active {
 	background-color: blue;
 }
+.prayers {
+	font-family: arial, times, "times new roman", georgia, serif;
+	color: black;
+	font-size: 32px;
+}
+.prayers h2 {
+	font-size: 32px;
+}
 h1{
 	border:2px solid black;
 	box-shadow:1px 1px 10px black;
@@ -49,6 +57,7 @@ h1{
 	background:linear-gradient(#000000,#008000);
 
 }
+
 .content {
 	font-family: arial, times, "times new roman", georgia, serif;
 	clear: both;
